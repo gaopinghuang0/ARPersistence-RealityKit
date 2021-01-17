@@ -63,8 +63,8 @@ extension CustomARView {
                 let data = try NSKeyedArchiver.archivedData(withRootObject: map, requiringSecureCoding: true)
                 self.storedData.set(data, forKey: self.mapKey)
                 DispatchQueue.main.async {
-                    self.saveLoadData?.loadButton.isHidden = false
-                    self.saveLoadData?.loadButton.isEnabled = true
+                    self.saveLoadState?.loadButton.isHidden = false
+                    self.saveLoadState?.loadButton.isEnabled = true
                 }
             } catch {
                 fatalError("Can't save map: \(error.localizedDescription)")

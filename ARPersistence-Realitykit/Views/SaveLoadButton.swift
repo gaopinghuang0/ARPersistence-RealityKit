@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct SaveLoadButton: View {
-    @EnvironmentObject var saveLoadData: SaveLoadData
+    @EnvironmentObject var saveLoadState: SaveLoadState
 
     var body: some View {
         HStack {
             // Load Button
-            if !saveLoadData.loadButton.isHidden {
+            if !saveLoadState.loadButton.isHidden {
                 Button(action: {
                     print("DEBUG: Load ARWorld map.")
                     
-                    saveLoadData.loadButton.isPressed = true
+                    saveLoadState.loadButton.isPressed = true
                 }) {
                     Text("Load Experience")
                         .padding(.horizontal, 14)
@@ -27,25 +27,25 @@ struct SaveLoadButton: View {
                 .font(.system(size: 15))
                 .foregroundColor(.white)
                 .cornerRadius(8)
-                .disabled(!saveLoadData.loadButton.isEnabled)
+                .disabled(!saveLoadState.loadButton.isEnabled)
             }
             
             // Save Button
             Button(action: {
                 print("DEBUG: Save ARWorld map.")
                 
-                saveLoadData.saveButton.isPressed = true
+                saveLoadState.saveButton.isPressed = true
             }) {
                 Text("Save Experience")
                     .padding(.horizontal, 14)
                     .padding(.vertical, 8)
                 
             }
-            .background(saveLoadData.saveButton.isEnabled ? Color.blue : Color.gray)
+            .background(saveLoadState.saveButton.isEnabled ? Color.blue : Color.gray)
             .font(.system(size: 15))
             .foregroundColor(.white)
             .cornerRadius(8)
-            .disabled(!saveLoadData.saveButton.isEnabled)
+            .disabled(!saveLoadState.saveButton.isEnabled)
         }
     }
 }
@@ -53,6 +53,6 @@ struct SaveLoadButton: View {
 struct SaveLoadButton_Previews: PreviewProvider {
     static var previews: some View {
         SaveLoadButton()
-            .environmentObject(SaveLoadData())
+            .environmentObject(SaveLoadState())
     }
 }

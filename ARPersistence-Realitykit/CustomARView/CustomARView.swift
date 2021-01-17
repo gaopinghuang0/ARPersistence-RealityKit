@@ -10,7 +10,7 @@ import ARKit
 
 class CustomARView: ARView {
     // Referring to @EnvironmentObject
-    var saveLoadData: SaveLoadData?
+    var saveLoadState: SaveLoadState?
     var arState: ARState?
     
     var defaultConfiguration: ARWorldTrackingConfiguration {
@@ -24,9 +24,9 @@ class CustomARView: ARView {
     }
     // MARK: - Init and setup
     
-    init(frame frameRect: CGRect, saveLoadData: SaveLoadData, arState: ARState) {
+    init(frame frameRect: CGRect, saveLoadState: SaveLoadState, arState: ARState) {
         super.init(frame: frameRect)
-        self.saveLoadData = saveLoadData
+        self.saveLoadState = saveLoadState
         self.arState = arState
     }
 

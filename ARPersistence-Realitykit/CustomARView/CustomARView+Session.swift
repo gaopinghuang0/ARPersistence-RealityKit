@@ -31,10 +31,10 @@ extension CustomARView: ARSessionDelegate {
         // Enable Save button only when the mapping status is good and an object has been placed
         switch frame.worldMappingStatus {
         case .extending, .mapped:
-            saveLoadData?.saveButton.isEnabled =
+            saveLoadState?.saveButton.isEnabled =
                 virtualObjectAnchor != nil && frame.anchors.contains(virtualObjectAnchor!)
         default:
-            saveLoadData?.saveButton.isEnabled = false
+            saveLoadState?.saveButton.isEnabled = false
         }
         arState?.mappingStatus = """
         Mapping: \(frame.worldMappingStatus.description)

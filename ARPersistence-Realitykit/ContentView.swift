@@ -21,7 +21,7 @@ struct ContentView : View {
 }
 
 struct ARViewContainer: UIViewRepresentable {
-    @EnvironmentObject var saveLoadData: SaveLoadData
+    @EnvironmentObject var saveLoadState: SaveLoadState
     @EnvironmentObject var arState: ARState
     
     func makeUIView(context: Context) -> CustomARView {
@@ -39,11 +39,11 @@ struct ARViewContainer: UIViewRepresentable {
         }
         
         // Pass in @EnvironmentObject
-        let arView = CustomARView(frame: .zero, saveLoadData: saveLoadData, arState: arState)
+        let arView = CustomARView(frame: .zero, saveLoadState: saveLoadState, arState: arState)
         
         // Read in any already saved map to see if we can load one.
         if arView.worldMapData != nil {
-            saveLoadData.loadButton.isHidden = false
+            saveLoadState.loadButton.isHidden = false
         }
         
         arView.setup()
@@ -57,17 +57,17 @@ struct ARViewContainer: UIViewRepresentable {
     
     func updateUIView(_ uiView: CustomARView, context: Context) {
         
-        if saveLoadData.saveButton.isPressed {
+        if saveLoadState.saveButton.isPressed {
             uiView.saveExperience()
             
             DispatchQueue.main.async {
-                self.saveLoadData.saveButton.isPressed = false
+                self.saveLoadState.saveButton.isPressed = false
             }
         }
         
-        if saveLoadData.loadButton.isPressed {
+        if saveLoadState.loadButton.isPressed {
             uiView.loadExperience()
-            self.saveLoadData.loadButton.isPressed = false
+            self.saveLoadState.loadButton.isPressed = false
             // Note: If we reset isPressed to false in main.async, it will crash
             // DispatchQueue.main.async {
             //      self.saveLoadData.loadButton.isPressed = false

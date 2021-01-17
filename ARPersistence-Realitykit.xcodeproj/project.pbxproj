@@ -18,7 +18,7 @@
 		FB2CB9DD25B1FE850051A1AB /* MainUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9DC25B1FE850051A1AB /* MainUI.swift */; };
 		FB2CB9E025B242360051A1AB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9DF25B242360051A1AB /* Extensions.swift */; };
 		FB2CB9E325B2425D0051A1AB /* SnapshotAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9E225B2425D0051A1AB /* SnapshotAnchor.swift */; };
-		FB2CB9E725B372040051A1AB /* SaveLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9E625B372040051A1AB /* SaveLoadData.swift */; };
+		FB2CB9E725B372040051A1AB /* SaveLoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9E625B372040051A1AB /* SaveLoadState.swift */; };
 		FB2CB9F325B3A0910051A1AB /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9F225B3A0910051A1AB /* AssetModel.swift */; };
 		FB2CB9F725B3A8CA0051A1AB /* teapot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FB2CB9F625B3A8CA0051A1AB /* teapot.usdz */; };
 		FB2CB9FC25B3ACE70051A1AB /* ARView+TapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9FB25B3ACE60051A1AB /* ARView+TapGesture.swift */; };
@@ -28,7 +28,7 @@
 		FB2CBAC125B4A3320051A1AB /* ARState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC025B4A3320051A1AB /* ARState.swift */; };
 		FB2CBAC425B4A5F30051A1AB /* CustomARView+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC325B4A5F30051A1AB /* CustomARView+Persistence.swift */; };
 		FB2CBAC725B4BC470051A1AB /* CustomARView+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC625B4BC470051A1AB /* CustomARView+Render.swift */; };
-		FB2CBACA25B4D17E0051A1AB /* ButtonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC925B4D17E0051A1AB /* ButtonInfo.swift */; };
+		FB2CBACA25B4D17E0051A1AB /* ButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC925B4D17E0051A1AB /* ButtonState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		FB2CB9DC25B1FE850051A1AB /* MainUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUI.swift; sourceTree = "<group>"; };
 		FB2CB9DF25B242360051A1AB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FB2CB9E225B2425D0051A1AB /* SnapshotAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotAnchor.swift; sourceTree = "<group>"; };
-		FB2CB9E625B372040051A1AB /* SaveLoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoadData.swift; sourceTree = "<group>"; };
+		FB2CB9E625B372040051A1AB /* SaveLoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoadState.swift; sourceTree = "<group>"; };
 		FB2CB9F225B3A0910051A1AB /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		FB2CB9F625B3A8CA0051A1AB /* teapot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = teapot.usdz; sourceTree = "<group>"; };
 		FB2CB9FB25B3ACE60051A1AB /* ARView+TapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+TapGesture.swift"; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		FB2CBAC025B4A3320051A1AB /* ARState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARState.swift; sourceTree = "<group>"; };
 		FB2CBAC325B4A5F30051A1AB /* CustomARView+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomARView+Persistence.swift"; sourceTree = "<group>"; };
 		FB2CBAC625B4BC470051A1AB /* CustomARView+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomARView+Render.swift"; sourceTree = "<group>"; };
-		FB2CBAC925B4D17E0051A1AB /* ButtonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonInfo.swift; sourceTree = "<group>"; };
+		FB2CBAC925B4D17E0051A1AB /* ButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +129,9 @@
 		FB2CB9E525B371E60051A1AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FB2CB9E625B372040051A1AB /* SaveLoadData.swift */,
+				FB2CB9E625B372040051A1AB /* SaveLoadState.swift */,
 				FB2CBAC025B4A3320051A1AB /* ARState.swift */,
-				FB2CBAC925B4D17E0051A1AB /* ButtonInfo.swift */,
+				FB2CBAC925B4D17E0051A1AB /* ButtonState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,13 +235,13 @@
 				FB2CB9E025B242360051A1AB /* Extensions.swift in Sources */,
 				FB2CB9E325B2425D0051A1AB /* SnapshotAnchor.swift in Sources */,
 				FB2CB9C825B1F0760051A1AB /* SaveLoadButton.swift in Sources */,
-				FB2CBACA25B4D17E0051A1AB /* ButtonInfo.swift in Sources */,
+				FB2CBACA25B4D17E0051A1AB /* ButtonState.swift in Sources */,
 				FB2CB9FC25B3ACE70051A1AB /* ARView+TapGesture.swift in Sources */,
 				FB2CBABB25B49C040051A1AB /* CustomARView+Gesture.swift in Sources */,
 				FB2CBAC425B4A5F30051A1AB /* CustomARView+Persistence.swift in Sources */,
 				FB2CB9DD25B1FE850051A1AB /* MainUI.swift in Sources */,
 				FB2CB9B425B1EE3F0051A1AB /* AppDelegate.swift in Sources */,
-				FB2CB9E725B372040051A1AB /* SaveLoadData.swift in Sources */,
+				FB2CB9E725B372040051A1AB /* SaveLoadState.swift in Sources */,
 				FB2CBAC125B4A3320051A1AB /* ARState.swift in Sources */,
 				FB2CB9D525B1F9C50051A1AB /* MappingStatusView.swift in Sources */,
 				FB2CBAB725B49B600051A1AB /* CustomARView.swift in Sources */,

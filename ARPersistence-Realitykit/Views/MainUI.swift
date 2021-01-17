@@ -61,6 +61,6 @@ struct MainUI_Previews: PreviewProvider {
     static var previews: some View {
         MainUI()
             .environmentObject(ARState())
-            .environmentObject(SaveLoadData())
+            .environmentObject(SaveLoadState())
     }
 }
