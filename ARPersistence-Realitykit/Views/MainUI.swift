@@ -9,15 +9,13 @@ import SwiftUI
 
 struct MainUI: View {
     
-    @Binding var sessionInfoLabel: String?
-    @Binding var thumbnailImage: UIImage?
-    @Binding var mappingStatus: String?
+    @EnvironmentObject var arState: ARState
     
     var body: some View {
         VStack {
             ZStack(alignment: .top) {
                 HStack {
-                    if let image = thumbnailImage {
+                    if let image = arState.thumbnailImage {
                         SnapshotThumbnail(image: image)
                             .frame(width: 100, height: 200)
                             .aspectRatio(contentMode: .fit)
@@ -27,7 +25,7 @@ struct MainUI: View {
                 }
                 
                 HStack {
-                    MappingStatusView(statusLabel: mappingStatus)
+                    MappingStatusView(statusLabel: arState.mappingStatus)
                         .frame(maxWidth: 100, alignment: .center)
                 }
                 
@@ -48,16 +46,17 @@ struct MainUI: View {
             
             Spacer()
             
-            SessionInfo(label: sessionInfoLabel)
+            SessionInfo(label: arState.sessionInfoLabel)
             SaveLoadButton()
         }
     }
 }
 
 struct MainUI_Previews: PreviewProvider {
-    static var image = UIImage(named: "AppIcon")!
+    
     static var previews: some View {
-        MainUI(sessionInfoLabel: .constant("Initializing"), thumbnailImage: .constant(image), mappingStatus: .constant("Mapping: Limited \nTracking: Initializing"))
+        MainUI()
+            .environmentObject(ARState())
             .environmentObject(SaveLoadData())
     }
 }
