@@ -21,7 +21,6 @@
 		FB2CB9E725B372040051A1AB /* SaveLoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9E625B372040051A1AB /* SaveLoadState.swift */; };
 		FB2CB9F325B3A0910051A1AB /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9F225B3A0910051A1AB /* AssetModel.swift */; };
 		FB2CB9F725B3A8CA0051A1AB /* teapot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FB2CB9F625B3A8CA0051A1AB /* teapot.usdz */; };
-		FB2CB9FC25B3ACE70051A1AB /* ARView+TapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9FB25B3ACE60051A1AB /* ARView+TapGesture.swift */; };
 		FB2CBAB725B49B600051A1AB /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAB625B49B600051A1AB /* CustomARView.swift */; };
 		FB2CBABB25B49C040051A1AB /* CustomARView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBABA25B49C040051A1AB /* CustomARView+Gesture.swift */; };
 		FB2CBABE25B49CC90051A1AB /* CustomARView+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBABD25B49CC90051A1AB /* CustomARView+Session.swift */; };
@@ -49,7 +48,6 @@
 		FB2CB9E625B372040051A1AB /* SaveLoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoadState.swift; sourceTree = "<group>"; };
 		FB2CB9F225B3A0910051A1AB /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		FB2CB9F625B3A8CA0051A1AB /* teapot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = teapot.usdz; sourceTree = "<group>"; };
-		FB2CB9FB25B3ACE60051A1AB /* ARView+TapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+TapGesture.swift"; sourceTree = "<group>"; };
 		FB2CBAB625B49B600051A1AB /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		FB2CBABA25B49C040051A1AB /* CustomARView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomARView+Gesture.swift"; sourceTree = "<group>"; };
 		FB2CBABD25B49CC90051A1AB /* CustomARView+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomARView+Session.swift"; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				FB2CB9BB25B1EE420051A1AB /* Preview Content */,
 				FB2CB9DF25B242360051A1AB /* Extensions.swift */,
 				FB2CB9E225B2425D0051A1AB /* SnapshotAnchor.swift */,
-				FB2CB9FB25B3ACE60051A1AB /* ARView+TapGesture.swift */,
 			);
 			path = "ARPersistence-Realitykit";
 			sourceTree = "<group>";
@@ -129,6 +126,7 @@
 		FB2CB9E525B371E60051A1AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB2CB9F225B3A0910051A1AB /* AssetModel.swift */,
 				FB2CB9E625B372040051A1AB /* SaveLoadState.swift */,
 				FB2CBAC025B4A3320051A1AB /* ARState.swift */,
 				FB2CBAC925B4D17E0051A1AB /* ButtonState.swift */,
@@ -140,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				FB2CB9F625B3A8CA0051A1AB /* teapot.usdz */,
-				FB2CB9F225B3A0910051A1AB /* AssetModel.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -236,7 +233,6 @@
 				FB2CB9E325B2425D0051A1AB /* SnapshotAnchor.swift in Sources */,
 				FB2CB9C825B1F0760051A1AB /* SaveLoadButton.swift in Sources */,
 				FB2CBACA25B4D17E0051A1AB /* ButtonState.swift in Sources */,
-				FB2CB9FC25B3ACE70051A1AB /* ARView+TapGesture.swift in Sources */,
 				FB2CBABB25B49C040051A1AB /* CustomARView+Gesture.swift in Sources */,
 				FB2CBAC425B4A5F30051A1AB /* CustomARView+Persistence.swift in Sources */,
 				FB2CB9DD25B1FE850051A1AB /* MainUI.swift in Sources */,
