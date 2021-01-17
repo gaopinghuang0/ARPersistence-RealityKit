@@ -4,6 +4,6 @@ This project migrates the [Apple sample](https://developer.apple.com/documentati
 
 I am new to SwiftUI, so feel free to leave comments or give suggestions.
 
-Xcode 12.3
-SwiftUI  5.3
-iOS  13+
+* Xcode 12.3
+* SwiftUI  5.3
+* iOS  13+
