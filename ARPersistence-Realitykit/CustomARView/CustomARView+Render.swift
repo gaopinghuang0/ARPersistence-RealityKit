@@ -15,6 +15,10 @@ extension CustomARView {
         guard anchor.name == virtualObjectAnchorName else {
             return
         }
+        // save the reference to the virtual object anchor when the anchor is added from relocalizing
+        if virtualObjectAnchor == nil {
+            virtualObjectAnchor = anchor
+        }
         
         if let modelEntity = virtualObject.modelEntity {
             print("DEBUG: adding model to scene - \(virtualObject.name)")

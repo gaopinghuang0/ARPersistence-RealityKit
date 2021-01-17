@@ -6,13 +6,14 @@ A custom anchor for saving a snapshot image in an ARWorldMap.
 */
 
 import ARKit
+import RealityKit
 
 /// - Tag: SnapshotAnchor
 class SnapshotAnchor: ARAnchor {
     
     let imageData: Data
     
-    convenience init?(capturing view: ARSCNView) {
+    convenience init?(capturing view: ARView) {
         guard let frame = view.session.currentFrame
             else { return nil }
         

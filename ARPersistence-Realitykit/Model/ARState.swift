@@ -10,7 +10,8 @@ import SwiftUI
 
 final class ARState: ObservableObject {
     @Published var sessionInfoLabel = "Initializing"
-    @Published var thumbnailEnabled = false
+    @Published var isThumbnailHidden = true
     @Published var thumbnailImage: UIImage?
     @Published var mappingStatus = "Mapping: "
+    @Published var isResetButtonPressed = false
 }

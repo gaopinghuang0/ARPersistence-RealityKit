@@ -26,17 +26,7 @@ struct ARViewContainer: UIViewRepresentable {
     @EnvironmentObject var saveLoadData: SaveLoadData
     @EnvironmentObject var arState: ARState
     
-    var defaultConfiguration: ARWorldTrackingConfiguration {
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .horizontal
-        configuration.environmentTexturing = .automatic
-        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
-            configuration.sceneReconstruction = .mesh
-        }
-        return configuration
-    }
-    
-    func makeUIView(context: Context) -> ARView {
+    func makeUIView(context: Context) -> CustomARView {
         
         guard ARWorldTrackingConfiguration.isSupported else {
             fatalError("""
@@ -55,16 +45,11 @@ struct ARViewContainer: UIViewRepresentable {
         
         // Read in any already saved map to see if we can load one.
         if arView.worldMapData != nil {
-            saveLoadData.loadButton.isEnabled = true
+            saveLoadData.loadButton.isHidden = false
         }
         
-        arView.session.run(defaultConfiguration)
-        arView.session.delegate = arView
-        
-        arView.setupGestures()
-        
-        arView.debugOptions = [ .showFeaturePoints ]
-        
+        arView.setup()
+
         // Prevent the screen from being dimmed after a while as users will likely
         // have long periods of interaction without touching the screen or buttons.
         UIApplication.shared.isIdleTimerDisabled = true
@@ -72,23 +57,34 @@ struct ARViewContainer: UIViewRepresentable {
         return arView
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {
+    func updateUIView(_ uiView: CustomARView, context: Context) {
         
-//        uiView.session.
         if saveLoadData.saveButton.isPressed {
-            print("DEBUG: saveButton is pressed")
+            uiView.saveExperience()
             
             DispatchQueue.main.async {
                 self.saveLoadData.saveButton.isPressed = false
             }
         }
+        
+        if saveLoadData.loadButton.isPressed {
+            uiView.loadExperience()
+            self.saveLoadData.loadButton.isPressed = false
+            // Note: If reset isPressed to false in main.async, it will crash
+//            DispatchQueue.main.async {
+//                self.saveLoadData.loadButton.isPressed = false
+//            }
+        }
+        
+        if arState.isResetButtonPressed {
+            uiView.resetTracking()
+            
+            DispatchQueue.main.async {
+                self.arState.isResetButtonPressed = false
+            }
+        }
     }
- 
-//    mutating func resetTracking(_ sender: UIButton?) {
-//        arView.session.run(defaultConfiguration, options: [.resetTracking, .removeExistingAnchors])
-//        isRelocalizingMap = false
-//        virtualObjectAnchor = nil
-//    }
+
 }
 
 #if DEBUG

@@ -86,7 +86,7 @@ extension CustomARView: ARSessionDelegate {
         // Update the UI to provide feedback on the state of the AR experience.
         let message: String
 
-        arState?.thumbnailEnabled = false
+        arState?.isThumbnailHidden = true
         switch (trackingState, frame.worldMappingStatus) {
         case (.normal, .mapped),
              (.normal, .extending):
@@ -105,7 +105,7 @@ extension CustomARView: ARSessionDelegate {
 
         case (.limited(.relocalizing), _) where self.isRelocalizingMap:
             message = "Move your device to the location shown in the image."
-            arState?.thumbnailEnabled = true
+            arState?.isThumbnailHidden = false
         default:
             message = trackingState.localizedFeedback
         }

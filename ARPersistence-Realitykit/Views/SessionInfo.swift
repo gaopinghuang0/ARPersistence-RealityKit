@@ -11,11 +11,13 @@ struct SessionInfo: View {
     var label: String?
     
     var body: some View {
-        Text(label ?? "Initializing")
-            .font(.system(size: 15))
-            .padding(8)
-            .cornerRadius(8)
-            .background(Color.gray.opacity(0.4))
+        if let text = label {
+            Text(text)
+                .font(.system(size: 15))
+                .padding(8)
+                .cornerRadius(8)
+                .background(Color.gray.opacity(0.4))
+        }
     }
 }
 

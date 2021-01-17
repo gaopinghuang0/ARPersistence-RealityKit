@@ -16,10 +16,12 @@ struct MainUI: View {
             ZStack(alignment: .top) {
                 HStack {
                     if let image = arState.thumbnailImage {
-                        SnapshotThumbnail(image: image)
-                            .frame(width: 100, height: 200)
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.leading, 10)
+                        if !arState.isThumbnailHidden {
+                            SnapshotThumbnail(image: image)
+                                .frame(width: 100, height: 200)
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.leading, 10)
+                        }
                     }
                     Spacer()
                 }
@@ -33,7 +35,9 @@ struct MainUI: View {
                     Spacer()
                     
                     Button(action: {
+                        print("DEBUG: reset tracking")
                         
+                        arState.isResetButtonPressed = true
                     }) {
                         Image(systemName: "arrow.counterclockwise")
                             .resizable()

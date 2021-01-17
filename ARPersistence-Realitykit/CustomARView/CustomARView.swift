@@ -13,6 +13,17 @@ class CustomARView: ARView {
     var saveLoadData: SaveLoadData?
     var arState: ARState?
     
+    var defaultConfiguration: ARWorldTrackingConfiguration {
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        configuration.environmentTexturing = .automatic
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+            configuration.sceneReconstruction = .mesh
+        }
+        return configuration
+    }
+    // MARK: - Init and setup
+    
     init(frame frameRect: CGRect, saveLoadData: SaveLoadData, arState: ARState) {
         super.init(frame: frameRect)
         self.saveLoadData = saveLoadData
@@ -25,6 +36,13 @@ class CustomARView: ARView {
     
     @objc required dynamic init(frame frameRect: CGRect) {
         fatalError("init(frame:) has not been implemented")
+    }
+
+    func setup() {
+        self.session.run(defaultConfiguration)
+        self.session.delegate = self
+        self.setupGestures()
+        self.debugOptions = [ .showFeaturePoints ]
     }
     
     // MARK: - AR content
@@ -39,9 +57,15 @@ class CustomARView: ARView {
  
     // MARK: - Persistence: Saving and Loading
     let storedData = UserDefaults.standard
+    let mapKey = "ar.worldmap"
 
-    var worldMapData: Data? {
-        storedData.data(forKey: "WorldMap")
+    lazy var worldMapData: Data? = {
+        storedData.data(forKey: mapKey)
+    }()
+    
+    func resetTracking() {
+        self.session.run(defaultConfiguration, options: [.resetTracking, .removeExistingAnchors])
+        self.isRelocalizingMap = false
+        self.virtualObjectAnchor = nil
     }
-
 }
