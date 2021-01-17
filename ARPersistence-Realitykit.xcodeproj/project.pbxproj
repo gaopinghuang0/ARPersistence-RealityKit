@@ -19,6 +19,9 @@
 		FB2CB9E025B242360051A1AB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9DF25B242360051A1AB /* Extensions.swift */; };
 		FB2CB9E325B2425D0051A1AB /* SnapshotAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9E225B2425D0051A1AB /* SnapshotAnchor.swift */; };
 		FB2CB9E725B372040051A1AB /* SaveLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9E625B372040051A1AB /* SaveLoadData.swift */; };
+		FB2CB9F325B3A0910051A1AB /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9F225B3A0910051A1AB /* AssetModel.swift */; };
+		FB2CB9F725B3A8CA0051A1AB /* teapot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FB2CB9F625B3A8CA0051A1AB /* teapot.usdz */; };
+		FB2CB9FC25B3ACE70051A1AB /* ARView+TapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9FB25B3ACE60051A1AB /* ARView+TapGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		FB2CB9DF25B242360051A1AB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FB2CB9E225B2425D0051A1AB /* SnapshotAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotAnchor.swift; sourceTree = "<group>"; };
 		FB2CB9E625B372040051A1AB /* SaveLoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoadData.swift; sourceTree = "<group>"; };
+		FB2CB9F225B3A0910051A1AB /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
+		FB2CB9F625B3A8CA0051A1AB /* teapot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = teapot.usdz; sourceTree = "<group>"; };
+		FB2CB9FB25B3ACE60051A1AB /* ARView+TapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+TapGesture.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		FB2CB9B225B1EE3F0051A1AB /* ARPersistence-Realitykit */ = {
 			isa = PBXGroup;
 			children = (
+				FB2CB9EE25B39FBD0051A1AB /* Assets */,
 				FB2CB9E525B371E60051A1AB /* Model */,
 				FB2CB9CB25B1F5050051A1AB /* Views */,
 				FB2CB9B325B1EE3F0051A1AB /* AppDelegate.swift */,
@@ -79,6 +86,7 @@
 				FB2CB9BB25B1EE420051A1AB /* Preview Content */,
 				FB2CB9DF25B242360051A1AB /* Extensions.swift */,
 				FB2CB9E225B2425D0051A1AB /* SnapshotAnchor.swift */,
+				FB2CB9FB25B3ACE60051A1AB /* ARView+TapGesture.swift */,
 			);
 			path = "ARPersistence-Realitykit";
 			sourceTree = "<group>";
@@ -109,6 +117,15 @@
 				FB2CB9E625B372040051A1AB /* SaveLoadData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FB2CB9EE25B39FBD0051A1AB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FB2CB9F625B3A8CA0051A1AB /* teapot.usdz */,
+				FB2CB9F225B3A0910051A1AB /* AssetModel.swift */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB2CB9F725B3A8CA0051A1AB /* teapot.usdz in Resources */,
 				FB2CB9BD25B1EE420051A1AB /* Preview Assets.xcassets in Resources */,
 				FB2CB9BA25B1EE420051A1AB /* Assets.xcassets in Resources */,
 			);
@@ -183,9 +201,11 @@
 				FB2CB9D125B1F6AE0051A1AB /* SnapshotThumbnail.swift in Sources */,
 				FB2CB9CD25B1F51C0051A1AB /* SessionInfo.swift in Sources */,
 				FB2CB9B625B1EE3F0051A1AB /* ContentView.swift in Sources */,
+				FB2CB9F325B3A0910051A1AB /* AssetModel.swift in Sources */,
 				FB2CB9E025B242360051A1AB /* Extensions.swift in Sources */,
 				FB2CB9E325B2425D0051A1AB /* SnapshotAnchor.swift in Sources */,
 				FB2CB9C825B1F0760051A1AB /* SaveLoadButton.swift in Sources */,
+				FB2CB9FC25B3ACE70051A1AB /* ARView+TapGesture.swift in Sources */,
 				FB2CB9DD25B1FE850051A1AB /* MainUI.swift in Sources */,
 				FB2CB9B425B1EE3F0051A1AB /* AppDelegate.swift in Sources */,
 				FB2CB9E725B372040051A1AB /* SaveLoadData.swift in Sources */,
