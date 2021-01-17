@@ -50,6 +50,7 @@ struct ARViewContainer: UIViewRepresentable {
             """) // For details, see https://developer.apple.com/documentation/arkit
         }
         
+        // Pass in @EnvironmentObject
         let arView = CustomARView(frame: .zero, saveLoadData: saveLoadData, arState: arState)
         
         // Read in any already saved map to see if we can load one.
@@ -59,6 +60,8 @@ struct ARViewContainer: UIViewRepresentable {
         
         arView.session.run(defaultConfiguration)
         arView.session.delegate = arView
+        
+        arView.setupGestures()
         
         arView.debugOptions = [ .showFeaturePoints ]
         

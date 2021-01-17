@@ -15,7 +15,17 @@ extension CustomARView: ARSessionDelegate {
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
         updateSessionInfoLabel(for: session.currentFrame!, trackingState: camera.trackingState)
     }
-
+    
+    // This is where we render virtual contents to scene.
+    // We add an anchor in `handleTap` function, it will then call this function.
+    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+        print("did add anchor: \(anchors.count) anchors in total")
+        
+        for anchor in anchors {
+            addAnchorEntityToScene(anchor: anchor)
+        }
+    }
+    
     /// - Tag: CheckMappingStatus
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         // Enable Save button only when the mapping status is good and an object has been placed
@@ -102,4 +112,5 @@ extension CustomARView: ARSessionDelegate {
 
         arState?.sessionInfoLabel = message
     }
+    
 }

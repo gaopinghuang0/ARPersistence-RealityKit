@@ -27,6 +27,7 @@
 		FB2CBABE25B49CC90051A1AB /* CustomARView+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBABD25B49CC90051A1AB /* CustomARView+Session.swift */; };
 		FB2CBAC125B4A3320051A1AB /* ARState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC025B4A3320051A1AB /* ARState.swift */; };
 		FB2CBAC425B4A5F30051A1AB /* CustomARView+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC325B4A5F30051A1AB /* CustomARView+Persistence.swift */; };
+		FB2CBAC725B4BC470051A1AB /* CustomARView+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC625B4BC470051A1AB /* CustomARView+Render.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		FB2CBABD25B49CC90051A1AB /* CustomARView+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomARView+Session.swift"; sourceTree = "<group>"; };
 		FB2CBAC025B4A3320051A1AB /* ARState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARState.swift; sourceTree = "<group>"; };
 		FB2CBAC325B4A5F30051A1AB /* CustomARView+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomARView+Persistence.swift"; sourceTree = "<group>"; };
+		FB2CBAC625B4BC470051A1AB /* CustomARView+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomARView+Render.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				FB2CBABA25B49C040051A1AB /* CustomARView+Gesture.swift */,
 				FB2CBABD25B49CC90051A1AB /* CustomARView+Session.swift */,
 				FB2CBAC325B4A5F30051A1AB /* CustomARView+Persistence.swift */,
+				FB2CBAC625B4BC470051A1AB /* CustomARView+Render.swift */,
 			);
 			path = CustomARView;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB2CBAC725B4BC470051A1AB /* CustomARView+Render.swift in Sources */,
 				FB2CB9D125B1F6AE0051A1AB /* SnapshotThumbnail.swift in Sources */,
 				FB2CB9CD25B1F51C0051A1AB /* SessionInfo.swift in Sources */,
 				FB2CB9B625B1EE3F0051A1AB /* ContentView.swift in Sources */,
