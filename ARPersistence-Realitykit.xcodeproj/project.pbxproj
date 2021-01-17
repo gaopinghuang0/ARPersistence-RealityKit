@@ -28,6 +28,7 @@
 		FB2CBAC125B4A3320051A1AB /* ARState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC025B4A3320051A1AB /* ARState.swift */; };
 		FB2CBAC425B4A5F30051A1AB /* CustomARView+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC325B4A5F30051A1AB /* CustomARView+Persistence.swift */; };
 		FB2CBAC725B4BC470051A1AB /* CustomARView+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC625B4BC470051A1AB /* CustomARView+Render.swift */; };
+		FB2CBACA25B4D17E0051A1AB /* ButtonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CBAC925B4D17E0051A1AB /* ButtonInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		FB2CBAC025B4A3320051A1AB /* ARState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARState.swift; sourceTree = "<group>"; };
 		FB2CBAC325B4A5F30051A1AB /* CustomARView+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomARView+Persistence.swift"; sourceTree = "<group>"; };
 		FB2CBAC625B4BC470051A1AB /* CustomARView+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomARView+Render.swift"; sourceTree = "<group>"; };
+		FB2CBAC925B4D17E0051A1AB /* ButtonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				FB2CB9E625B372040051A1AB /* SaveLoadData.swift */,
 				FB2CBAC025B4A3320051A1AB /* ARState.swift */,
+				FB2CBAC925B4D17E0051A1AB /* ButtonInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				FB2CB9E025B242360051A1AB /* Extensions.swift in Sources */,
 				FB2CB9E325B2425D0051A1AB /* SnapshotAnchor.swift in Sources */,
 				FB2CB9C825B1F0760051A1AB /* SaveLoadButton.swift in Sources */,
+				FB2CBACA25B4D17E0051A1AB /* ButtonInfo.swift in Sources */,
 				FB2CB9FC25B3ACE70051A1AB /* ARView+TapGesture.swift in Sources */,
 				FB2CBABB25B49C040051A1AB /* CustomARView+Gesture.swift in Sources */,
 				FB2CBAC425B4A5F30051A1AB /* CustomARView+Persistence.swift in Sources */,

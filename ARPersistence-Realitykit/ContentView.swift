@@ -13,12 +13,10 @@ struct ContentView : View {
     var body: some View {
         ZStack {
             ARViewContainer()
-            .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all)
 
             MainUI()
         }
-        .environmentObject(ARState())
-        .environmentObject(SaveLoadData())
     }
 }
 
@@ -70,17 +68,17 @@ struct ARViewContainer: UIViewRepresentable {
         if saveLoadData.loadButton.isPressed {
             uiView.loadExperience()
             self.saveLoadData.loadButton.isPressed = false
-            // Note: If reset isPressed to false in main.async, it will crash
-//            DispatchQueue.main.async {
-//                self.saveLoadData.loadButton.isPressed = false
-//            }
+            // Note: If we reset isPressed to false in main.async, it will crash
+            // DispatchQueue.main.async {
+            //      self.saveLoadData.loadButton.isPressed = false
+            // }
         }
         
-        if arState.isResetButtonPressed {
+        if arState.resetButton.isPressed {
             uiView.resetTracking()
             
             DispatchQueue.main.async {
-                self.arState.isResetButtonPressed = false
+                self.arState.resetButton.isPressed = false
             }
         }
     }

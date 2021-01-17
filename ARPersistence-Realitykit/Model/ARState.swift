@@ -13,5 +13,5 @@ final class ARState: ObservableObject {
     @Published var isThumbnailHidden = true
     @Published var thumbnailImage: UIImage?
     @Published var mappingStatus = "Mapping: "
-    @Published var isResetButtonPressed = false
+    @Published var resetButton = ButtonInfo()
 }

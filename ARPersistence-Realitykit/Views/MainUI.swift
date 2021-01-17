@@ -15,8 +15,8 @@ struct MainUI: View {
         VStack {
             ZStack(alignment: .top) {
                 HStack {
-                    if let image = arState.thumbnailImage {
-                        if !arState.isThumbnailHidden {
+                    if !arState.isThumbnailHidden {
+                        if let image = arState.thumbnailImage {
                             SnapshotThumbnail(image: image)
                                 .frame(width: 100, height: 200)
                                 .aspectRatio(contentMode: .fit)
@@ -37,7 +37,7 @@ struct MainUI: View {
                     Button(action: {
                         print("DEBUG: reset tracking")
                         
-                        arState.isResetButtonPressed = true
+                        arState.resetButton.isPressed = true
                     }) {
                         Image(systemName: "arrow.counterclockwise")
                             .resizable()
