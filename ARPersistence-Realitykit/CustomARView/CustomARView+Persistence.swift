@@ -31,7 +31,7 @@ extension CustomARView {
         // Display the snapshot image stored in the world map to aid user in relocalizing.
         if let snapshotData = worldMap.snapshotAnchor?.imageData,
             let snapshot = UIImage(data: snapshotData) {
-            self.arState?.thumbnailImage = snapshot
+            self.arState.thumbnailImage = snapshot
         } else {
             print("No snapshot image in world map")
         }
@@ -50,7 +50,7 @@ extension CustomARView {
     func saveExperience() {
         self.session.getCurrentWorldMap { worldMap, _ in
             guard let map = worldMap else {
-                self.arState?.sessionInfoLabel = "Can't get current world map"
+                self.arState.sessionInfoLabel = "Can't get current world map"
                 return
             }
             
@@ -63,8 +63,8 @@ extension CustomARView {
                 let data = try NSKeyedArchiver.archivedData(withRootObject: map, requiringSecureCoding: true)
                 self.storedData.set(data, forKey: self.mapKey)
                 DispatchQueue.main.async {
-                    self.saveLoadState?.loadButton.isHidden = false
-                    self.saveLoadState?.loadButton.isEnabled = true
+                    self.saveLoadState.loadButton.isHidden = false
+                    self.saveLoadState.loadButton.isEnabled = true
                 }
             } catch {
                 fatalError("Can't save map: \(error.localizedDescription)")

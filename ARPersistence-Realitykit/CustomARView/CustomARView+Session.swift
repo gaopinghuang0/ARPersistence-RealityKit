@@ -31,12 +31,12 @@ extension CustomARView: ARSessionDelegate {
         // Enable Save button only when the mapping status is good and an object has been placed
         switch frame.worldMappingStatus {
         case .extending, .mapped:
-            saveLoadState?.saveButton.isEnabled =
+            saveLoadState.saveButton.isEnabled =
                 virtualObjectAnchor != nil && frame.anchors.contains(virtualObjectAnchor!)
         default:
-            saveLoadState?.saveButton.isEnabled = false
+            saveLoadState.saveButton.isEnabled = false
         }
-        arState?.mappingStatus = """
+        arState.mappingStatus = """
         Mapping: \(frame.worldMappingStatus.description)
         Tracking: \(frame.camera.trackingState.description)
         """
@@ -47,16 +47,16 @@ extension CustomARView: ARSessionDelegate {
     
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay.
-        arState?.sessionInfoLabel = "Session was interrupted"
+        arState.sessionInfoLabel = "Session was interrupted"
     }
 
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required.
-        arState?.sessionInfoLabel = "Session interruption ended"
+        arState.sessionInfoLabel = "Session interruption ended"
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {
-        arState?.sessionInfoLabel = "Session failed: \(error.localizedDescription)"
+        arState.sessionInfoLabel = "Session failed: \(error.localizedDescription)"
         guard error is ARError else { return }
 
         let errorWithInfo = error as NSError
@@ -86,7 +86,7 @@ extension CustomARView: ARSessionDelegate {
         // Update the UI to provide feedback on the state of the AR experience.
         let message: String
 
-        arState?.isThumbnailHidden = true
+        arState.isThumbnailHidden = true
         switch (trackingState, frame.worldMappingStatus) {
         case (.normal, .mapped),
              (.normal, .extending):
@@ -105,12 +105,12 @@ extension CustomARView: ARSessionDelegate {
 
         case (.limited(.relocalizing), _) where self.isRelocalizingMap:
             message = "Move your device to the location shown in the image."
-            arState?.isThumbnailHidden = false
+            arState.isThumbnailHidden = false
         default:
             message = trackingState.localizedFeedback
         }
 
-        arState?.sessionInfoLabel = message
+        arState.sessionInfoLabel = message
     }
     
 }
